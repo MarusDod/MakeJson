@@ -1,0 +1,76 @@
+name:                MakeJson
+version:             0.1.0.0
+#github:              "Github username here/MakeJson"
+license:             PublicDomain
+author:              "Marcos Domingues"
+maintainer:          "markitos.2001@hotmail.com"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+synopsis:            Makefile in Json configuration file
+# category:            App category here
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/Github username here/MakeJson#readme>
+
+dependencies:
+  - base >=4.12
+  - text >=1.2 && <1.3
+  - mtl >=2.2 && <2.3
+  - containers
+  - unix
+  - directory
+  - process
+  - transformers
+
+library:
+  source-dirs: src
+  dependencies:
+    - base >=4.12
+    - text >=1.2 && <1.3
+    - mtl >=2.2 && <2.3
+    - containers
+    - unix
+    - directory
+    - process
+    - transformers
+  exposed-modules:
+    - Parser
+    - ParseSettingsJson
+    - LoadSettings
+    - RunSettings
+
+executables:
+  MakeJson-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+      - base >=4.12
+      - text >=1.2 && <1.3
+      - mtl >=2.2 && <2.3
+      - containers
+      - unix
+      - directory
+      - process
+      - transformers
+      - MakeJson
+
+tests:
+  MakeJson-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies: []
+

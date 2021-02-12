@@ -1,0 +1,80 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 37fde57d8930a2cfa2086cbae1af9d054dd78b93c7b8fbf708d2d3779b6709e0
+
+name:           MakeJson
+version:        0.1.0.0
+synopsis:       Makefile in Json configuration file
+description:    Please see the README on GitHub at <https://github.com/Github username here/MakeJson#readme>
+author:         Marcos Domingues
+maintainer:     markitos.2001@hotmail.com
+license:        PublicDomain
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+library
+  exposed-modules:
+      Parser
+      ParseSettingsJson
+      LoadSettings
+      RunSettings
+  other-modules:
+      Parserbackup
+      Paths_MakeJson
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.12
+    , containers
+    , directory
+    , mtl >=2.2 && <2.3
+    , process
+    , text >=1.2 && <1.3
+    , transformers
+    , unix
+  default-language: Haskell2010
+
+executable MakeJson-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_MakeJson
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      MakeJson
+    , base >=4.12
+    , containers
+    , directory
+    , mtl >=2.2 && <2.3
+    , process
+    , text >=1.2 && <1.3
+    , transformers
+    , unix
+  default-language: Haskell2010
+
+test-suite MakeJson-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_MakeJson
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.12
+    , containers
+    , directory
+    , mtl >=2.2 && <2.3
+    , process
+    , text >=1.2 && <1.3
+    , transformers
+    , unix
+  default-language: Haskell2010
